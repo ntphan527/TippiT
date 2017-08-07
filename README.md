@@ -48,7 +48,7 @@ Outlets and actions allow the view and the controller to communicate with each o
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2017] [Ngan Phan]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
