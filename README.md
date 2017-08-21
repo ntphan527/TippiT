@@ -4,7 +4,7 @@
 
 Submitted by: **Ngan Phan**
 
-Time spent: **3** hours spent in total
+Time spent: **20** hours spent in total
 
 ## User Stories
 
@@ -14,14 +14,16 @@ The following **required** functionality is complete:
 * [X] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
-* [ ] UI animations
-* [ ] Remembering the bill amount across app restarts (if <10mins)
-* [ ] Using locale-specific currency and currency thousands separators.
-* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [X] UI animations
+* [X] Remembering the bill amount across app restarts (if <10mins)
+* [X] Using locale-specific currency and currency thousands separators.
+* [X] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+* [X] Tip percentages are configurable and remembered across app restarts
+* [X] Specify the number of people to calculate the split amount
+* [X] Settings to round up or down the split amount
 
 ## Video Walkthrough 
 

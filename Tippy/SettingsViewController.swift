@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var roundSplitSwitch: UISwitch!
     @IBOutlet weak var defaultTipControl: UISegmentedControl!
     @IBOutlet weak var defaultTipTextField1: UITextField!
     @IBOutlet weak var defaultTipTextField2: UITextField!
@@ -30,6 +31,8 @@ class SettingsViewController: UIViewController {
             defaultTipControl.setTitle(String(tipPercentages[i]) + "%", forSegmentAt: i)
         }
         showDefaultTipTextField()
+        
+        roundSplitSwitch.isOn = defaults.bool(forKey: "enableRoundingSplit")
     }
     
     /*override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +86,12 @@ class SettingsViewController: UIViewController {
         defaults.set(defaultTipControl.selectedSegmentIndex, forKey: "tip")
         defaults.synchronize()
         showDefaultTipTextField()
+    }
+    
+    @IBAction func roundSplit(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(roundSplitSwitch.isOn, forKey: "enableRoundingSplit")
+        defaults.synchronize()
     }
     
     @IBAction func onTap(_ sender: Any) {

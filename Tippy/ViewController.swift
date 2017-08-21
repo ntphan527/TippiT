@@ -54,7 +54,7 @@ class ViewController: UIViewController {
             
             let timeInterval:Double = endTime.timeIntervalSince(startDate) / 60
             
-            if timeInterval > 1 {
+            if timeInterval > 10 {
                 defaults.removeObject(forKey: "billAmount")
                 billField.text = ""
                 billField.placeholder = NSLocale.current.currencySymbol
@@ -117,10 +117,24 @@ class ViewController: UIViewController {
     @IBAction func calculateSplit(_ sender: Any) {
         if let totalCurrency = totalLabel.text {
             if let totalNumber = stripCurrency(amount: totalCurrency) {
-                let total = totalNumber.doubleValue
+                var total = totalNumber.doubleValue
                 let split = Double(splitTextField.text!) ?? 1
-                let splitAmount = total / split
-                splitAmountLabel.text = displayCurrency(amount: splitAmount)
+                var splitAmount = total / split
+                
+                let defaults = UserDefaults.standard
+                let roundSplit = defaults.bool(forKey: "enableRoundingSplit")
+                if roundSplit {
+                    splitAmount = ceil(splitAmount)
+                    let bill = Double(billField.text!) ?? 0
+                    total = splitAmount * split
+                    let tipAmount = total - bill
+                    
+                    splitAmountLabel.text = displayCurrency(amount: splitAmount)
+                    totalLabel.text = displayCurrency(amount: total)
+                    tipLabel.text = displayCurrency(amount: tipAmount)
+                } else {
+                    splitAmountLabel.text = displayCurrency(amount: splitAmount)
+                }
                 print("total: \(total)")
             }
         }
