@@ -23,7 +23,7 @@ The following **additional** features are implemented:
 
 * [X] Tip percentages are configurable and remembered across app restarts
 * [X] Specify the number of people to calculate the split amount
-* [X] Settings to round up or down the split amount
+* [X] Settings to round up the split amount
 
 ## Video Walkthrough 
 
