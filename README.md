@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [X] Tip percentages are configurable and remembered across app restarts
-* [X] Specify the number of people to calculate the split amount
+* [X] Specify the number of people to calculate the split amount and remembered across app restarts
 * [X] Settings to round up the split amount
 
 ## Video Walkthrough 
